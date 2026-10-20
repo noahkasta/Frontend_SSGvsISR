@@ -1,0 +1,25 @@
+{
+  "name": "ssg-vs-isr",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "nuxt dev",
+    "build": "nuxt build",
+    "start": "node .output/server/index.mjs",
+    "show:build": "find .output/public -name '*.html'",
+    "postinstall": "nuxt prepare"
+  },
+  "dependencies": {
+    "nuxt": "~4.3.1",
+    "vue": "^3.5.42",
+    "vue-router": "^4.6.3"
+  },
+  "devDependencies": {
+    "typescript": "~5.9.3",
+    "vue-tsc": "^3.3.11"
+  },
+  "overrides": {
+    "unstorage": "1.17.5"
+  }
+}

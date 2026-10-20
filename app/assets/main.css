@@ -1,0 +1,160 @@
+/*
+  Brutalistisches Design: schwarz/weiß, dicke Rahmen, harte Schatten, keine Rundungen.
+  Nur zwei Signalfarben: Gelb = ISR / "veraltet", Rot = Anti-Pattern.
+*/
+:root {
+  --black: #000000;
+  --white: #ffffff;
+  --paper: #f4f4f0;
+  --grey: #555555;
+  --yellow: #ffe600;
+  --red: #ff3b00;
+
+  --border: 3px solid var(--black);
+  --shadow: 6px 6px 0 var(--black);
+
+  --font-sans: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--black);
+  font-family: var(--font-sans);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+main {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 40px 16px 96px;
+}
+
+h1 {
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  margin: 16px 0 24px;
+}
+
+h2 {
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+a {
+  color: var(--black);
+}
+
+code {
+  font-family: var(--font-mono);
+  font-size: 0.85em;
+  background: var(--white);
+  border: 1px solid var(--black);
+  padding: 0 5px;
+}
+
+ul {
+  padding-left: 20px;
+}
+
+li {
+  margin: 6px 0;
+}
+
+/* ---------- Wiederverwendbare Klassen ---------- */
+
+/* Kasten mit dickem Rahmen und hartem Schatten */
+.card {
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  padding: 20px 24px;
+  margin: 24px 0;
+}
+
+/* Kleine Überschrift in Monospace, z. B. "AUSPROBIEREN" */
+.label {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+}
+
+.muted {
+  color: var(--grey);
+}
+
+/* Etikett, z. B. für die Strategie */
+.tag {
+  display: inline-block;
+  border: 2px solid var(--black);
+  padding: 2px 10px;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tag--ssg {
+  background: var(--black);
+  color: var(--white);
+}
+
+.tag--isr {
+  background: var(--yellow);
+  color: var(--black);
+}
+
+.tag--alert {
+  background: var(--red);
+  color: var(--white);
+}
+
+.tag--light {
+  background: var(--white);
+  color: var(--black);
+}
+
+/* Button: drückt sich beim Hovern "in den Schatten" */
+.btn {
+  border: var(--border);
+  background: var(--black);
+  color: var(--white);
+  padding: 10px 20px;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  box-shadow: 4px 4px 0 var(--yellow);
+  cursor: pointer;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 var(--yellow);
+}
+
+.btn--alert {
+  background: var(--red);
+  box-shadow: 4px 4px 0 var(--black);
+}
+
+.btn--alert:hover {
+  box-shadow: 2px 2px 0 var(--black);
+}
